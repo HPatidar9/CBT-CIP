@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <image src="images/logo1.png" class="logo"></image>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <!--<li><a href="#">Services</a></li>-->
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Harshita Patidar</h1>
+                <p>Web Devloper</p>
+            </div>
+        </div>
+        <!----------------------About------------------->
+        <div id="About">
+            <div class="container">
+                <div class="row">
+                    <div class="About-col-1">
+                        <h1 class="sub-title">About Me</h1>
+                        <p> I am a Web Developer.I am ready To get an opportunity where I can make the best of my potential and 
+                            contribute to the organization’s growth.</p>
+                        <div class="tab-title">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <span class="skill">#html</span>
+                            <span class="skill">#css</span>
+                            <span class="skill">#bootstrap</span>
+                            <span class="skill">#javascript</span>
+                            <span class="skill">#react.js</span>
+                            <span class="skill">#node.js</span>
+                            <span class="skill">#python</span>
+                            <span class="skill">#flask</span>
+                            <span class="skill">#java</span>
+                            <span class="skill">#c++</span>
+                            <span class="skill">#c</span>
+                            <span class="skill">#sql</span>
+                            <span class="skill">#mysql</span>
+                            <span class="skill">#mongodb</span>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2022</span><br>M.sc in Computer Science from Devi Ahilya Vishwavidyalaya,Indore</li>
+                                <li><span>2020</span><br>B.sc in Computer Science from Devi Ahilya Vishwavidyalaya,Indore</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        <!-------------------Projects------------------>
+        <div id="projects">
+            <div class="container">
+                <h1 class="sub-title">My Projects</h1>
+                <div class="projects-list">
+                    <div class="project-col-1">
+                        <img src="images/project1.jpg">
+                    </div>
+                    <div class="project-col-2">
+                        <h1>Weather App</h1>
+                        <h4>Developed a weather application for real-time weather data with an intuitive UI.
+                            Implemented features for dynamic location-based weather updates, including 
+                            temperature, humidity, and wind speed. Enhanced user experience with error
+                             handling and interactive search functionality, providing accurate and 
+                            reliable weather information."</h4>
+                        <div class="project-skills">
+                            <span>#html</span>
+                            <span>#css</span>
+                            <span>#javascript</span>
+                            <span>#bootstrap</span>
+                            <span>#API</span>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!----------------------contact--------------------->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p>harshitaportfolio@gmail.com</p>
+                        <a href="images/resume.pdf" download class="btn btn2">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                        <form onsubmit="sendEmail(); reset(); return flase;">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Harshita Patidar</p>
+        </div>
+    <script>
+        function opentab(tabname) {
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            // Remove active-link class from all tab links
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active-link");
+            }
+
+            // Hide all tab contents
+            for (var i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].classList.remove("active-tab");
+            }
+
+            // Add active-link class to the clicked tab link and show its content
+            document.getElementById(tabname).classList.add("active-tab");
+            event.currentTarget.classList.add("active-link");
+        }
+        window.onload = function() {
+            opentab('skills');
+        };
+    </script>
+     
+</body>
+</html>
